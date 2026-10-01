@@ -1,0 +1,1757 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lojas Sono - Qualidade do Sono e Colchões</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7fc;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a2a6c, #2a4b8d);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            letter-spacing: 2px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        nav {
+            background-color: #0f1a3a;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            padding: 0.8rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            transition: background 0.3s, color 0.3s;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            background-color: #f1c40f;
+            color: #1a2a6c;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+        }
+
+        section:hover {
+            transform: translateY(-3px);
+        }
+
+        h2 {
+            color: #1a2a6c;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-left: 6px solid #f1c40f;
+            padding-left: 1rem;
+        }
+
+        h3 {
+            color: #2a4b8d;
+            margin: 1.5rem 0 0.8rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .back-pain-highlight {
+            background: #fff4e5;
+            border-radius: 16px;
+            padding: 1.8rem;
+            border-left: 6px solid #e67e22;
+            margin: 1.5rem 0;
+        }
+
+        .back-pain-highlight ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .back-pain-highlight li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .back-pain-highlight li::before {
+            content: "🦴";
+            font-size: 1.4rem;
+        }
+
+        .importance-highlight {
+            background: #e8f0fe;
+            border-radius: 16px;
+            padding: 1.8rem;
+            border-left: 6px solid #2a4b8d;
+            margin: 1.5rem 0;
+        }
+
+        .importance-highlight ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .importance-highlight li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .importance-highlight li::before {
+            content: "🛌";
+            font-size: 1.4rem;
+        }
+
+        .spine-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+            align-items: center;
+        }
+
+        .spine-box {
+            background: #f9fbff;
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 2px dashed #b0c4de;
+            transition: transform 0.3s;
+        }
+
+        .spine-box:hover {
+            transform: scale(1.03);
+        }
+
+        .spine-box.good {
+            border-color: #27ae60;
+            background: #eafaf1;
+        }
+
+        .spine-box.bad {
+            border-color: #e74c3c;
+            background: #fdedec;
+        }
+
+        .spine-box h4 {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            color: #1a2a6c;
+        }
+
+        .spine-box.good h4 { color: #27ae60; }
+        .spine-box.bad h4 { color: #e74c3c; }
+
+        .spine-box .label {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-top: 0.8rem;
+        }
+
+        .spine-box.good .label { background: #27ae60; color: white; }
+        .spine-box.bad .label { background: #e74c3c; color: white; }
+
+        .spine-box svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .athlete-section {
+            background: linear-gradient(135deg, #e8f0fe, #f9fbff);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 6px solid #2a4b8d;
+        }
+
+        .athlete-section h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0;
+        }
+
+        .athlete-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+        }
+
+        .athlete-item {
+            background: white;
+            border-radius: 16px;
+            padding: 1.3rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .athlete-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .athlete-item .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .athlete-item h4 {
+            color: #1a2a6c;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        .athlete-item p {
+            font-size: 0.95rem;
+            color: #34495e;
+            margin: 0;
+        }
+
+        .age-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.8rem;
+            margin-top: 2rem;
+        }
+
+        .age-card {
+            background: #ffffff;
+            border: 1px solid #e0e7ef;
+            border-radius: 20px;
+            padding: 1.8rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .age-card:hover {
+            border-color: #f1c40f;
+            box-shadow: 0 12px 24px rgba(26, 42, 108, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .age-card::after {
+            content: "🔍 Clique para saber mais";
+            display: block;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #2a4b8d;
+            font-weight: 600;
+            text-align: right;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .age-card:hover::after { opacity: 1; }
+
+        .age-card h3 {
+            font-size: 1.6rem;
+            margin-top: 0;
+            color: #1a2a6c;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .age-card .recommendation {
+            background: #f1c40f;
+            color: #1a2a6c;
+            font-weight: 700;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            display: inline-block;
+            margin: 0.8rem 0;
+            font-size: 0.95rem;
+        }
+
+        .age-card p {
+            font-size: 1rem;
+            color: #34495e;
+        }
+
+        .page-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            overflow-y: auto;
+        }
+
+        .page-modal.active { display: flex; }
+
+        .modal-content {
+            background: white;
+            border-radius: 24px;
+            max-width: 850px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2.5rem;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #1a2a6c;
+            transition: color 0.3s;
+            z-index: 10;
+        }
+
+        .close-btn:hover { color: #e74c3c; }
+
+        .modal-content h2 {
+            border-left: 6px solid #f1c40f;
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-content h3 {
+            color: #2a4b8d;
+            margin-top: 1.8rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+
+        .modal-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .modal-content ul li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.8rem;
+            position: relative;
+            font-size: 1.05rem;
+        }
+
+        .modal-content ul li::before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+            font-size: 1.1rem;
+        }
+
+        .modal-content .tip-box {
+            background: #e8f0fe;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 5px solid #2a4b8d;
+        }
+
+        .modal-content .tip-box strong { color: #1a2a6c; }
+
+        .table-responsive {
+            overflow-x: auto;
+            margin: 2rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        th {
+            background-color: #1a2a6c;
+            color: white;
+            padding: 1rem;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        tr:last-child td { border-bottom: none; }
+
+        tbody tr {
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        tbody tr:hover { background-color: #fff9e6; }
+
+        tbody tr td:first-child::before {
+            content: "👆 ";
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        tbody tr:hover td:first-child::before { opacity: 1; }
+
+        tbody tr td:last-child::after {
+            content: " Ver detalhes →";
+            color: #2a4b8d;
+            font-weight: 600;
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+
+        .bed-illustration {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: #f9fbff;
+            border-radius: 20px;
+            border: 2px dashed #b0c4de;
+        }
+
+        .bed-illustration svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .spec-item {
+            background: #e8f0fe;
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .spec-item .spec-label {
+            font-size: 0.8rem;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .spec-item .spec-value {
+            font-size: 1.2rem;
+            color: #1a2a6c;
+            font-weight: 700;
+            margin-top: 0.3rem;
+        }
+
+        /* ============ ESTILOS DO QUIZ ============ */
+        .quiz-section {
+            background: linear-gradient(135deg, #1a2a6c, #2a4b8d);
+            color: white;
+            padding: 3rem 2.5rem;
+            border-radius: 20px;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 12px 30px rgba(26, 42, 108, 0.25);
+            transition: none;
+        }
+
+        .quiz-section:hover { transform: none; }
+
+        .quiz-section h2 {
+            color: white;
+            border-left: 6px solid #f1c40f;
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .quiz-section > p {
+            color: #d0d9f0;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .quiz-progress {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 30px;
+            height: 12px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .quiz-progress-bar {
+            background: linear-gradient(90deg, #f1c40f, #f39c12);
+            height: 100%;
+            width: 0%;
+            transition: width 0.5s ease;
+            border-radius: 30px;
+        }
+
+        .quiz-counter {
+            text-align: right;
+            font-size: 0.95rem;
+            color: #f1c40f;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .quiz-question {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .quiz-question h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            margin-top: 0;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .quiz-option {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 1rem 1.3rem;
+            border-radius: 14px;
+            text-align: left;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: inherit;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .quiz-option:hover:not(:disabled) {
+            background: rgba(241, 196, 15, 0.2);
+            border-color: #f1c40f;
+            transform: translateX(5px);
+        }
+
+        .quiz-option:disabled {
+            cursor: not-allowed;
+            opacity: 0.85;
+        }
+
+        .quiz-option .letter {
+            background: rgba(255, 255, 255, 0.2);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .quiz-option.correct {
+            background: rgba(39, 174, 96, 0.4);
+            border-color: #27ae60;
+        }
+
+        .quiz-option.correct .letter {
+            background: #27ae60;
+            color: white;
+        }
+
+        .quiz-option.wrong {
+            background: rgba(231, 76, 60, 0.4);
+            border-color: #e74c3c;
+        }
+
+        .quiz-option.wrong .letter {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .quiz-feedback {
+            margin-top: 1.5rem;
+            padding: 1.3rem;
+            border-radius: 14px;
+            font-size: 1rem;
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .quiz-feedback.show { display: block; }
+
+        .quiz-feedback.correct {
+            background: rgba(39, 174, 96, 0.25);
+            border-left: 5px solid #27ae60;
+            color: #eafaf1;
+        }
+
+        .quiz-feedback.wrong {
+            background: rgba(231, 76, 60, 0.25);
+            border-left: 5px solid #e74c3c;
+            color: #fdedec;
+        }
+
+        .quiz-feedback strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .quiz-next-btn {
+            background: #f1c40f;
+            color: #1a2a6c;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            transition: all 0.3s;
+            display: none;
+            font-family: inherit;
+        }
+
+        .quiz-next-btn.show { display: inline-block; }
+
+        .quiz-next-btn:hover {
+            background: #f39c12;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(241, 196, 15, 0.4);
+        }
+
+        .quiz-result {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .quiz-result.show { display: block; }
+
+        .quiz-result .score-circle {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: conic-gradient(#f1c40f var(--score-deg, 0deg), rgba(255,255,255,0.15) 0deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+
+        .quiz-result .score-circle::before {
+            content: "";
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: #1a2a6c;
+            border-radius: 50%;
+        }
+
+        .quiz-result .score-inner {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .quiz-result .score-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #f1c40f;
+            line-height: 1;
+        }
+
+        .quiz-result .score-total {
+            font-size: 1rem;
+            color: #d0d9f0;
+        }
+
+        .quiz-result h3 {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .quiz-result .result-message {
+            font-size: 1.15rem;
+            color: #d0d9f0;
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .quiz-result .result-emoji {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .quiz-restart-btn {
+            background: #f1c40f;
+            color: #1a2a6c;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        .quiz-restart-btn:hover {
+            background: #f39c12;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(241, 196, 15, 0.4);
+        }
+
+        footer {
+            background-color: #0f1a3a;
+            color: #b0c4de;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+            font-size: 1.1rem;
+        }
+
+        footer strong {
+            color: #f1c40f;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2rem; }
+            section { padding: 1.8rem; }
+            h2 { font-size: 1.6rem; }
+            .modal-content { padding: 1.8rem; }
+            .spine-comparison { grid-template-columns: 1fr; }
+            tbody tr td:last-child::after { display: none; }
+            .quiz-section { padding: 2rem 1.5rem; }
+            .quiz-question { padding: 1.5rem; }
+            .quiz-result .score-circle { width: 140px; height: 140px; }
+            .quiz-result .score-circle::before { width: 115px; height: 115px; }
+            .quiz-result .score-number { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Lojas Sono</h1>
+        <p>Seu descanso começa com a escolha certa</p>
+    </header>
+
+    <nav>
+        <a onclick="scrollToSection('importancia')">Importância do Colchão</a>
+        <a onclick="scrollToSection('coluna')">Dores na Coluna</a>
+        <a onclick="scrollToSection('atletas')">Atletas</a>
+        <a onclick="scrollToSection('idades')">Recomendação por Idade</a>
+        <a onclick="scrollToSection('tabela')">Tabela Resumo</a>
+        <a onclick="scrollToSection('quiz')">Quiz</a>
+    </nav>
+
+    <div class="container">
+        
+        <!-- Seção Importância -->
+        <section id="importancia">
+            <h2>A Importância do Colchão para a Saúde</h2>
+            <p>O colchão é muito mais do que um móvel: é um investimento na sua saúde física e mental. Passamos cerca de <strong>1/3 da vida dormindo</strong>, e a qualidade desse sono depende diretamente do suporte que recebemos.</p>
+            
+            <div class="importance-highlight">
+                <ul>
+                    <li><strong>Alinhamento da coluna:</strong> Um colchão adequado mantém a curvatura natural da coluna, prevenindo dores nas costas e pescoço.</li>
+                    <li><strong>Qualidade do sono:</strong> Superfícies muito duras ou moles causam microdespertares, impedindo o sono profundo e reparador.</li>
+                    <li><strong>Circulação sanguínea:</strong> Colchões que distribuem bem o peso evitam pontos de pressão e formigamento.</li>
+                    <li><strong>Higiene e alergias:</strong> Materiais de qualidade e boa ventilação reduzem ácaros e fungos, essenciais para alérgicos.</li>
+                    <li><strong>Durabilidade e economia:</strong> Um bom colchão dura de 8 a 10 anos, protegendo sua saúde a longo prazo.</li>
+                </ul>
+            </div>
+            
+            <p>Na <strong>Lojas Sono</strong>, acreditamos que cada pessoa merece um colchão que se adapte ao seu corpo e estilo de vida.</p>
+        </section>
+
+        <!-- Seção Dores na Coluna -->
+        <section id="coluna">
+            <h2>Dores na Coluna e o Papel do Colchão</h2>
+            <p>As dores na coluna são uma das queixas mais comuns no mundo moderno. Elas podem ter diversas origens: má postura, sedentarismo, hérnias de disco, escoliose, artrose ou simplesmente o desgaste natural da idade. Mas um fator muitas vezes ignorado é o <strong>colchão inadequado</strong>.</p>
+
+            <h3>Coluna Reta vs. Coluna Torta</h3>
+            <p>Observe a diferença entre uma coluna saudável e uma coluna comprometida:</p>
+
+            <div class="spine-comparison">
+                <div class="spine-box good">
+                    <svg viewBox="0 0 180 320" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="90" cy="160" rx="55" ry="140" fill="#eafaf1" opacity="0.5"/>
+                        <line x1="90" y1="40" x2="90" y2="280" stroke="#27ae60" stroke-width="3"/>
+                        <rect x="80" y="50" width="20" height="10" rx="3" fill="#27ae60" opacity="0.8"/>
+                        <rect x="80" y="70" width="20" height="10" rx="3" fill="#27ae60" opacity="0.8"/>
+                        <rect x="80" y="90" width="20" height="10" rx="3" fill="#27ae60" opacity="0.8"/>
+                        <rect x="80" y="110" width="20" height="10" rx="3" fill="#27ae60" opacity="0.8"/>
+                        <rect x="80" y="130" width="20" height="10" rx="3" fill="#27ae60" opacity="0.8"/>
+                        <rect x="80" y="150" width="20" height="10" rx="3" fill="#27ae60" opacity="0.8"/>
+                        <rect x="80" y="170" width="20" height="10" rx="3" fill="#27ae60" opacity="0.8"/>
+                        <rect x="80" y="190" width="20" height="10" rx="3" fill="#27ae60" opacity="0.8"/>
+                        <rect x="80" y="210" width="20" height="10" rx="3" fill="#27ae60" opacity="0.8"/>
+                        <rect x="80" y="230" width="20" height="10" rx="3" fill="#27ae60" opacity="0.8"/>
+                        <rect x="80" y="250" width="20" height="10" rx="3" fill="#27ae60" opacity="0.8"/>
+                        <circle cx="90" cy="30" r="15" fill="#fad7a0" stroke="#27ae60" stroke-width="2"/>
+                        <line x1="50" y1="55" x2="130" y2="55" stroke="#27ae60" stroke-width="2.5"/>
+                        <line x1="55" y1="255" x2="125" y2="255" stroke="#27ae60" stroke-width="2.5"/>
+                        <line x1="90" y1="15" x2="90" y2="295" stroke="#27ae60" stroke-width="1" stroke-dasharray="4,4" opacity="0.5"/>
+                        <circle cx="140" cy="30" r="14" fill="#27ae60"/>
+                        <text x="140" y="36" text-anchor="middle" fill="white" font-size="18" font-weight="bold">✓</text>
+                    </svg>
+                    <h4>Coluna Alinhada</h4>
+                    <span class="label">Saudável</span>
+                    <p style="font-size: 0.95rem; margin-top: 0.8rem;">Curvaturas naturais preservadas, sem compressão de discos ou nervos.</p>
+                </div>
+
+                <div class="spine-box bad">
+                    <svg viewBox="0 0 180 320" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="90" cy="160" rx="55" ry="140" fill="#fdedec" opacity="0.5"/>
+                        <path d="M 100 40 Q 70 100 105 160 Q 130 220 85 280" stroke="#e74c3c" stroke-width="3" fill="none"/>
+                        <rect x="90" y="50" width="20" height="10" rx="3" fill="#e74c3c" opacity="0.8" transform="rotate(-8 100 55)"/>
+                        <rect x="82" y="70" width="20" height="10" rx="3" fill="#e74c3c" opacity="0.8" transform="rotate(-4 92 75)"/>
+                        <rect x="78" y="90" width="20" height="10" rx="3" fill="#e74c3c" opacity="0.8" transform="rotate(2 88 95)"/>
+                        <rect x="82" y="110" width="20" height="10" rx="3" fill="#e74c3c" opacity="0.8" transform="rotate(6 92 115)"/>
+                        <rect x="90" y="130" width="20" height="10" rx="3" fill="#e74c3c" opacity="0.8" transform="rotate(10 100 135)"/>
+                        <rect x="98" y="150" width="20" height="10" rx="3" fill="#e74c3c" opacity="0.8" transform="rotate(8 108 155)"/>
+                        <rect x="104" y="170" width="20" height="10" rx="3" fill="#e74c3c" opacity="0.8" transform="rotate(4 114 175)"/>
+                        <rect x="102" y="190" width="20" height="10" rx="3" fill="#e74c3c" opacity="0.8" transform="rotate(-2 112 195)"/>
+                        <rect x="96" y="210" width="20" height="10" rx="3" fill="#e74c3c" opacity="0.8" transform="rotate(-8 106 215)"/>
+                        <rect x="88" y="230" width="20" height="10" rx="3" fill="#e74c3c" opacity="0.8" transform="rotate(-12 98 235)"/>
+                        <rect x="80" y="250" width="20" height="10" rx="3" fill="#e74c3c" opacity="0.8" transform="rotate(-10 90 255)"/>
+                        <circle cx="100" cy="30" r="15" fill="#fad7a0" stroke="#e74c3c" stroke-width="2"/>
+                        <line x1="55" y1="58" x2="135" y2="50" stroke="#e74c3c" stroke-width="2.5"/>
+                        <line x1="50" y1="252" x2="125" y2="260" stroke="#e74c3c" stroke-width="2.5"/>
+                        <line x1="90" y1="15" x2="90" y2="295" stroke="#e74c3c" stroke-width="1" stroke-dasharray="4,4" opacity="0.5"/>
+                        <circle cx="140" cy="30" r="14" fill="#e74c3c"/>
+                        <text x="140" y="36" text-anchor="middle" fill="white" font-size="18" font-weight="bold">✕</text>
+                    </svg>
+                    <h4>Coluna Desalinhada</h4>
+                    <span class="label">Comprometida</span>
+                    <p style="font-size: 0.95rem; margin-top: 0.8rem;">Desvios causam compressão de discos, dores e tensão muscular.</p>
+                </div>
+            </div>
+
+            <div class="back-pain-highlight">
+                <ul>
+                    <li><strong>Colchão muito mole:</strong> A coluna "afunda" e perde o alinhamento natural, forçando músculos e ligamentos. Isso agrava dores lombares e cervicais.</li>
+                    <li><strong>Colchão muito duro:</strong> Cria pontos de pressão nos ombros, quadris e costelas, dificultando a circulação e causando rigidez ao acordar.</li>
+                    <li><strong>Colchão sem suporte:</strong> Se a espuma já está afundada ou as molas estão vencidas, a coluna trabalha a noite inteira para se manter estável — e você acorda cansado e dolorido.</li>
+                </ul>
+            </div>
+
+            <h3>Como o colchão certo ajuda na melhora</h3>
+            <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                <li><strong>Alinhamento neutro da coluna:</strong> Mantém as curvaturas naturais (cervical, torácica e lombar) sem forçar.</li>
+                <li><strong>Distribuição de pressão:</strong> Evita que pontos específicos recebam toda a carga do corpo.</li>
+                <li><strong>Relaxamento muscular:</strong> Com a coluna apoiada, os músculos das costas podem relaxar completamente.</li>
+                <li><strong>Melhora da circulação:</strong> Menos compressão nos vasos sanguíneos, o que reduz formigamento e inflamação.</li>
+            </ul>
+        </section>
+
+        <!-- Seção Atletas -->
+        <section id="atletas">
+            <h2>Por que a Coluna é Importante para Atletas?</h2>
+            <p>Para quem pratica esportes — seja amador ou profissional — a coluna vertebral é o <strong>eixo central de todo o movimento</strong>. Ela transmite força entre membros inferiores e superiores, absorve impactos e permite rotações, flexões e extensões.</p>
+
+            <div class="athlete-section">
+                <h3>🏃 A coluna como "motor" do desempenho</h3>
+                <p>Uma coluna alinhada e saudável é sinônimo de <strong>melhor performance, menos lesões e recuperação mais rápida</strong>. Veja por quê:</p>
+
+                <div class="athlete-grid">
+                    <div class="athlete-item">
+                        <div class="icon">⚡</div>
+                        <h4>Transmissão de Força</h4>
+                        <p>A coluna é o elo entre pernas e braços. Se estiver desalinhada, a força se perde e o rendimento cai.</p>
+                    </div>
+                    <div class="athlete-item">
+                        <div class="icon">🛡️</div>
+                        <h4>Prevenção de Lesões</h4>
+                        <p>Coluna alinhada reduz o risco de hérnias, contraturas e lesões musculares durante treinos intensos.</p>
+                    </div>
+                    <div class="athlete-item">
+                        <div class="icon">🔄</div>
+                        <h4>Mobilidade e Rotação</h4>
+                        <p>Esportes como tênis, natação e artes marciais exigem rotação. A coluna saudável permite amplitude total.</p>
+                    </div>
+                    <div class="athlete-item">
+                        <div class="icon">💪</div>
+                        <h4>Recuperação Muscular</h4>
+                        <p>Durante o sono, o corpo repara os músculos. Um colchão adequado acelera essa recuperação.</p>
+                    </div>
+                    <div class="athlete-item">
+                        <div class="icon">🧠</div>
+                        <h4>Foco e Concentração</h4>
+                        <p>Dormir bem melhora os reflexos, a tomada de decisão e a coordenação — essenciais no esporte.</p>
+                    </div>
+                    <div class="athlete-item">
+                        <div class="icon">🏆</div>
+                        <h4>Consistência nos Treinos</h4>
+                        <p>Sem dores nas costas, o atleta treina mais e melhor, sem interrupções por lesão.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>O que os atletas precisam no colchão</h3>
+            <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                <li><strong>Suporte firme e uniforme:</strong> Para manter a coluna alinhada após treinos intensos.</li>
+                <li><strong>Alívio de pontos de pressão:</strong> O memory foam ajuda a relaxar a musculatura cansada.</li>
+                <li><strong>Boa ventilação:</strong> Atletas suam mais e precisam de colchões que não retenham calor.</li>
+                <li><strong>Durabilidade:</strong> Atletas têm peso e desgaste maiores, então o colchão precisa aguentar.</li>
+            </ul>
+
+            <div class="back-pain-highlight" style="background: #eafaf1; border-left-color: #27ae60;">
+                <ul style="list-style: none;">
+                    <li style="display: flex; gap: 0.8rem;"><span style="font-size: 1.4rem;">🏅</span><span><strong>Recomendação da Lojas Sono para atletas:</strong> Colchões de molas ensacadas com camada de viscoelástico (memory foam) e firmeza média. Eles oferecem suporte, alívio de pressão e não transferem movimento — ideais para quem dorme acompanhado.</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Seção Idades -->
+        <section id="idades">
+            <h2>Qual o Colchão Recomendado para Cada Idade?</h2>
+            <p>As necessidades de suporte e conforto mudam conforme envelhecemos. Clique em cada faixa etária para ver o guia completo.</p>
+
+            <div class="age-grid">
+                <div class="age-card" onclick="abrirPagina('bebes')">
+                    <h3>👶 Bebês e Crianças (0–12 anos)</h3>
+                    <span class="recommendation">Colchão Firme e Hipoalergênico</span>
+                    <p>Para bebês, o colchão deve ser <strong>extra firme</strong> para prevenir deformações e garantir segurança. Para crianças, um colchão de espuma firme com densidade D28 a D33 é ideal.</p>
+                </div>
+
+                <div class="age-card" onclick="abrirPagina('adolescentes')">
+                    <h3>🧑 Adolescência (13–19 anos)</h3>
+                    <span class="recommendation">Suporte Médio com Molas ou Espuma D33</span>
+                    <p>Nesta fase, o corpo passa por crescimento acelerado e a coluna precisa de <strong>suporte adequado</strong>. O colchão ideal é de <strong>firmeza média</strong>.</p>
+                </div>
+
+                <div class="age-card" onclick="abrirPagina('adultos')">
+                    <h3>🧑‍💼 Adultos (20–59 anos)</h3>
+                    <span class="recommendation">Conforto Personalizado (Molas ou Espuma)</span>
+                    <p>A escolha depende do peso e preferência. Pessoas mais leves podem optar por espuma D33; casais ou pessoas mais pesadas se beneficiam de <strong>molas ensacadas</strong>.</p>
+                </div>
+
+                <div class="age-card" onclick="abrirPagina('melhoridade')">
+                    <h3>🧓 Melhor Idade (60+ anos)</h3>
+                    <span class="recommendation">Conforto com Suporte (Evite Muito Duro)</span>
+                    <p>Com o envelhecimento, a pele e as articulações ficam mais sensíveis. O colchão deve ser <strong>confortável, mas com suporte</strong>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Tabela Resumo -->
+        <section id="tabela">
+            <h2>Tabela Resumo de Recomendações</h2>
+            <p style="margin-bottom: 1.5rem;">👆 <strong>Clique em qualquer linha</strong> para ver os detalhes completos com ilustrações do colchão ideal.</p>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Faixa Etária</th>
+                            <th>Tipo de Colchão</th>
+                            <th>Firmeza</th>
+                            <th>Densidade / Tecnologia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr onclick="abrirPagina('tabelaBebes')">
+                            <td>Bebês (0–2 anos)</td>
+                            <td>Espuma baby</td>
+                            <td>Extra firme</td>
+                            <td>D28 a D30, impermeável</td>
+                        </tr>
+                        <tr onclick="abrirPagina('tabelaCriancas')">
+                            <td>Crianças (3–12 anos)</td>
+                            <td>Espuma ou molas</td>
+                            <td>Firme</td>
+                            <td>D28 a D33</td>
+                        </tr>
+                        <tr onclick="abrirPagina('tabelaAdolescentes')">
+                            <td>Adolescentes (13–19 anos)</td>
+                            <td>Molas ensacadas ou espuma</td>
+                            <td>Média</td>
+                            <td>D33 a D45</td>
+                        </tr>
+                        <tr onclick="abrirPagina('tabelaAdultos')">
+                            <td>Adultos (20–59 anos)</td>
+                            <td>Molas ensacadas / espuma</td>
+                            <td>Média a firme</td>
+                            <td>D33 a D45 (ou molas)</td>
+                        </tr>
+                        <tr onclick="abrirPagina('tabelaMelhorIdade')">
+                            <td>Melhor idade (60+ anos)</td>
+                            <td>Viscoelástico / Pillow top</td>
+                            <td>Média macia</td>
+                            <td>Espuma com memory foam</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ==================== SEÇÃO QUIZ ==================== -->
+        <div class="quiz-section" id="quiz">
+            <h2>🧠 Quiz: Você Aprendeu Tudo?</h2>
+            <p>Responda às 10 perguntas com base no que você leu no site e descubra o quanto você sabe sobre a importância do colchão para a saúde!</p>
+
+            <div class="quiz-progress">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+            <div class="quiz-counter" id="quizCounter">Pergunta 1 de 10</div>
+
+            <div id="quizContainer"></div>
+
+            <div class="quiz-result" id="quizResult">
+                <div class="score-circle" id="scoreCircle">
+                    <div class="score-inner">
+                        <div class="score-number" id="scoreNumber">0</div>
+                        <div class="score-total">de 10</div>
+                    </div>
+                </div>
+                <h3 id="resultTitle">Resultado</h3>
+                <p class="result-message" id="resultMessage"></p>
+                <div class="result-emoji" id="resultEmoji">🎉</div>
+                <button class="quiz-restart-btn" onclick="reiniciarQuiz()">🔄 Refazer o Quiz</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal -->
+    <div id="pageModal" class="page-modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="fecharPagina()">&times;</button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Lojas Sono</strong></p>
+        <p>Seu sono da melhor forma</p>
+    </footer>
+
+    <script>
+        // ==================== DESENHOS DE CAMA (SVG) ====================
+        
+        const svgBebe = `
+            <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg">
+                <rect x="30" y="60" width="240" height="90" rx="8" fill="#d4e4f7" stroke="#1a2a6c" stroke-width="3"/>
+                <line x1="50" y1="60" x2="50" y2="150" stroke="#1a2a6c" stroke-width="2"/>
+                <line x1="80" y1="60" x2="80" y2="150" stroke="#1a2a6c" stroke-width="2"/>
+                <line x1="110" y1="60" x2="110" y2="150" stroke="#1a2a6c" stroke-width="2"/>
+                <line x1="140" y1="60" x2="140" y2="150" stroke="#1a2a6c" stroke-width="2"/>
+                <line x1="170" y1="60" x2="170" y2="150" stroke="#1a2a6c" stroke-width="2"/>
+                <line x1="200" y1="60" x2="200" y2="150" stroke="#1a2a6c" stroke-width="2"/>
+                <line x1="230" y1="60" x2="230" y2="150" stroke="#1a2a6c" stroke-width="2"/>
+                <line x1="260" y1="60" x2="260" y2="150" stroke="#1a2a6c" stroke-width="2"/>
+                <rect x="35" y="70" width="230" height="25" rx="5" fill="#f1c40f" stroke="#1a2a6c" stroke-width="2"/>
+                <ellipse cx="80" cy="80" rx="25" ry="10" fill="#ffffff" stroke="#1a2a6c" stroke-width="2"/>
+                <circle cx="80" cy="75" r="8" fill="#fad7a0" stroke="#1a2a6c" stroke-width="1.5"/>
+                <path d="M 75 73 Q 78 70 80 73" stroke="#1a2a6c" stroke-width="1" fill="none"/>
+                <path d="M 82 73 Q 84 70 86 73" stroke="#1a2a6c" stroke-width="1" fill="none"/>
+                <circle cx="78" cy="75" r="1" fill="#1a2a6c"/>
+                <circle cx="84" cy="75" r="1" fill="#1a2a6c"/>
+                <rect x="120" y="72" width="140" height="20" rx="5" fill="#a9d1f7" stroke="#1a2a6c" stroke-width="1.5"/>
+                <text x="200" y="50" font-size="16" fill="#f1c40f">⭐</text>
+                <text x="240" y="45" font-size="12" fill="#f1c40f">⭐</text>
+                <text x="160" y="45" font-size="10" fill="#f1c40f">⭐</text>
+            </svg>
+        `;
+
+        const svgCrianca = `
+            <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg">
+                <rect x="20" y="110" width="260" height="40" rx="6" fill="#8b6b4a" stroke="#1a2a6c" stroke-width="3"/>
+                <rect x="25" y="80" width="250" height="35" rx="8" fill="#f1c40f" stroke="#1a2a6c" stroke-width="2"/>
+                <rect x="25" y="90" width="250" height="25" rx="6" fill="#a9d1f7" stroke="#1a2a6c" stroke-width="1.5"/>
+                <rect x="40" y="70" width="60" height="20" rx="10" fill="#ffffff" stroke="#1a2a6c" stroke-width="2"/>
+                <circle cx="70" cy="72" r="12" fill="#fad7a0" stroke="#1a2a6c" stroke-width="1.5"/>
+                <path d="M 62 68 Q 65 64 68 68" stroke="#1a2a6c" stroke-width="1.2" fill="none"/>
+                <path d="M 72 68 Q 75 64 78 68" stroke="#1a2a6c" stroke-width="1.2" fill="none"/>
+                <circle cx="65" cy="72" r="1.2" fill="#1a2a6c"/>
+                <circle cx="75" cy="72" r="1.2" fill="#1a2a6c"/>
+                <path d="M 68 78 Q 70 80 72 78" stroke="#1a2a6c" stroke-width="1" fill="none"/>
+                <text x="240" y="60" font-size="20" fill="#1a2a6c" font-weight="bold">z</text>
+                <text x="255" y="45" font-size="16" fill="#1a2a6c" font-weight="bold">z</text>
+                <text x="268" y="32" font-size="12" fill="#1a2a6c" font-weight="bold">z</text>
+            </svg>
+        `;
+
+        const svgAdolescente = `
+            <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg">
+                <rect x="15" y="110" width="270" height="45" rx="6" fill="#5d4037" stroke="#1a2a6c" stroke-width="3"/>
+                <rect x="20" y="75" width="260" height="40" rx="8" fill="#f1c40f" stroke="#1a2a6c" stroke-width="2"/>
+                <rect x="20" y="75" width="260" height="12" rx="6" fill="#f39c12" stroke="#1a2a6c" stroke-width="1.5"/>
+                <circle cx="60" cy="100" r="4" fill="none" stroke="#1a2a6c" stroke-width="1.5"/>
+                <circle cx="100" cy="100" r="4" fill="none" stroke="#1a2a6c" stroke-width="1.5"/>
+                <circle cx="140" cy="100" r="4" fill="none" stroke="#1a2a6c" stroke-width="1.5"/>
+                <circle cx="180" cy="100" r="4" fill="none" stroke="#1a2a6c" stroke-width="1.5"/>
+                <circle cx="220" cy="100" r="4" fill="none" stroke="#1a2a6c" stroke-width="1.5"/>
+                <circle cx="260" cy="100" r="4" fill="none" stroke="#1a2a6c" stroke-width="1.5"/>
+                <rect x="20" y="85" width="260" height="25" rx="6" fill="#a9d1f7" stroke="#1a2a6c" stroke-width="1.5"/>
+                <rect x="35" y="65" width="65" height="22" rx="11" fill="#ffffff" stroke="#1a2a6c" stroke-width="2"/>
+                <circle cx="67" cy="68" r="13" fill="#fad7a0" stroke="#1a2a6c" stroke-width="1.5"/>
+                <path d="M 59 64 Q 62 60 65 64" stroke="#1a2a6c" stroke-width="1.2" fill="none"/>
+                <path d="M 69 64 Q 72 60 75 64" stroke="#1a2a6c" stroke-width="1.2" fill="none"/>
+                <circle cx="62" cy="68" r="1.2" fill="#1a2a6c"/>
+                <circle cx="72" cy="68" r="1.2" fill="#1a2a6c"/>
+                <path d="M 65 74 Q 67 76 69 74" stroke="#1a2a6c" stroke-width="1" fill="none"/>
+                <rect x="250" y="60" width="15" height="25" rx="3" fill="#34495e" stroke="#1a2a6c" stroke-width="1.5"/>
+                <rect x="252" y="63" width="11" height="17" rx="1" fill="#85c1e9"/>
+            </svg>
+        `;
+
+        const svgAdulto = `
+            <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="110" width="280" height="45" rx="6" fill="#4e342e" stroke="#1a2a6c" stroke-width="3"/>
+                <rect x="15" y="70" width="270" height="45" rx="8" fill="#f1c40f" stroke="#1a2a6c" stroke-width="2"/>
+                <rect x="15" y="70" width="270" height="15" rx="6" fill="#f39c12" stroke="#1a2a6c" stroke-width="1.5"/>
+                <circle cx="45" cy="100" r="5" fill="none" stroke="#1a2a6c" stroke-width="1.5"/>
+                <circle cx="85" cy="100" r="5" fill="none" stroke="#1a2a6c" stroke-width="1.5"/>
+                <circle cx="125" cy="100" r="5" fill="none" stroke="#1a2a6c" stroke-width="1.5"/>
+                <circle cx="165" cy="100" r="5" fill="none" stroke="#1a2a6c" stroke-width="1.5"/>
+                <circle cx="205" cy="100" r="5" fill="none" stroke="#1a2a6c" stroke-width="1.5"/>
+                <circle cx="245" cy="100" r="5" fill="none" stroke="#1a2a6c" stroke-width="1.5"/>
+                <rect x="15" y="80" width="270" height="30" rx="6" fill="#a9d1f7" stroke="#1a2a6c" stroke-width="1.5"/>
+                <rect x="30" y="60" width="60" height="22" rx="11" fill="#ffffff" stroke="#1a2a6c" stroke-width="2"/>
+                <rect x="210" y="60" width="60" height="22" rx="11" fill="#ffffff" stroke="#1a2a6c" stroke-width="2"/>
+                <circle cx="60" cy="63" r="12" fill="#fad7a0" stroke="#1a2a6c" stroke-width="1.5"/>
+                <circle cx="55" cy="62" r="1.2" fill="#1a2a6c"/>
+                <circle cx="65" cy="62" r="1.2" fill="#1a2a6c"/>
+                <path d="M 58 68 Q 60 70 62 68" stroke="#1a2a6c" stroke-width="1" fill="none"/>
+                <circle cx="240" cy="63" r="12" fill="#f5cba7" stroke="#1a2a6c" stroke-width="1.5"/>
+                <circle cx="235" cy="62" r="1.2" fill="#1a2a6c"/>
+                <circle cx="245" cy="62" r="1.2" fill="#1a2a6c"/>
+                <path d="M 238 68 Q 240 70 242 68" stroke="#1a2a6c" stroke-width="1" fill="none"/>
+                <text x="150" y="45" font-size="22" fill="#1a2a6c" font-weight="bold">z</text>
+                <text x="165" y="30" font-size="18" fill="#1a2a6c" font-weight="bold">z</text>
+                <text x="178" y="18" font-size="14" fill="#1a2a6c" font-weight="bold">z</text>
+            </svg>
+        `;
+
+        const svgMelhorIdade = `
+            <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="115" width="280" height="40" rx="6" fill="#4e342e" stroke="#1a2a6c" stroke-width="3"/>
+                <rect x="15" y="70" width="270" height="50" rx="10" fill="#f1c40f" stroke="#1a2a6c" stroke-width="2"/>
+                <rect x="15" y="70" width="270" height="20" rx="10" fill="#e67e22" stroke="#1a2a6c" stroke-width="1.5"/>
+                <rect x="15" y="70" width="270" height="10" rx="8" fill="#f5b041" stroke="#1a2a6c" stroke-width="1.5"/>
+                <rect x="15" y="85" width="270" height="30" rx="8" fill="#a9d1f7" stroke="#1a2a6c" stroke-width="1.5"/>
+                <path d="M 30 60 Q 60 50 90 60 L 90 80 Q 60 85 30 80 Z" fill="#ffffff" stroke="#1a2a6c" stroke-width="2"/>
+                <circle cx="60" cy="68" r="12" fill="#fad7a0" stroke="#1a2a6c" stroke-width="1.5"/>
+                <path d="M 52 64 Q 55 60 58 64" stroke="#1a2a6c" stroke-width="1.2" fill="none"/>
+                <path d="M 62 64 Q 65 60 68 64" stroke="#1a2a6c" stroke-width="1.2" fill="none"/>
+                <circle cx="55" cy="68" r="1.2" fill="#1a2a6c"/>
+                <circle cx="65" cy="68" r="1.2" fill="#1a2a6c"/>
+                <path d="M 58 74 Q 60 76 62 74" stroke="#1a2a6c" stroke-width="1" fill="none"/>
+                <path d="M 50 60 Q 55 55 60 58 Q 65 55 70 60" stroke="#ecf0f1" stroke-width="3" fill="none"/>
+                <line x1="260" y1="70" x2="260" y2="155" stroke="#8b6b4a" stroke-width="3"/>
+                <path d="M 250 70 Q 260 60 270 70" stroke="#8b6b4a" stroke-width="3" fill="none"/>
+                <text x="200" y="50" font-size="22" fill="#1a2a6c" font-weight="bold">z</text>
+                <text x="215" y="35" font-size="18" fill="#1a2a6c" font-weight="bold">z</text>
+            </svg>
+        `;
+
+        // ==================== CONTEÚDO DAS PÁGINAS ====================
+        
+        const paginas = {
+            bebes: {
+                titulo: "👶 Bebês e Crianças (0–12 anos)",
+                conteudo: `
+                    <h2>Guia Completo: Bebês e Crianças</h2>
+                    <p>Nesta fase, o sono é fundamental para o crescimento e desenvolvimento. O colchão precisa oferecer <strong>segurança e suporte firme</strong>.</p>
+                    <div class="bed-illustration">${svgBebe}</div>
+                    <h3>O melhor jeito de dormir</h3>
+                    <ul>
+                        <li>Bebês devem dormir de barriga para cima, em superfície firme e plana.</li>
+                        <li>Evite travesseiros, almofadas e cobertores soltos para bebês com menos de 1 ano.</li>
+                        <li>Crianças podem dormir de lado ou de barriga para cima, desde que a coluna esteja alinhada.</li>
+                    </ul>
+                    <h3>Colchão ideal</h3>
+                    <ul>
+                        <li><strong>Tipo:</strong> Espuma de alta densidade (D28 a D33) ou colchão específico para berço.</li>
+                        <li><strong>Firmeza:</strong> Firme ou extra firme. Nunca use colchões macios para bebês.</li>
+                        <li><strong>Revestimento:</strong> Impermeável e antialérgico, para facilitar a limpeza.</li>
+                        <li><strong>Tamanho:</strong> Deve se encaixar perfeitamente no berço ou cama, sem frestas.</li>
+                    </ul>
+                    <div class="tip-box"><strong>💡 Dica da Lojas Sono:</strong> Para crianças maiores, um colchão de espuma D33 com pillow top fino oferece conforto sem perder o suporte.</div>
+                `
+            },
+            adolescentes: {
+                titulo: "🧑 Adolescência (13–19 anos)",
+                conteudo: `
+                    <h2>Guia Completo: Adolescentes</h2>
+                    <p>O corpo está em pleno crescimento e a coluna passa por mudanças importantes. Um colchão inadequado pode agravar problemas posturais.</p>
+                    <div class="bed-illustration">${svgAdolescente}</div>
+                    <h3>O melhor jeito de dormir</h3>
+                    <ul>
+                        <li>Dormir de lado é a posição mais recomendada, com um travesseiro que preencha o espaço entre ombro e pescoço.</li>
+                        <li>Se dormir de barriga para cima, use um travesseiro baixo e coloque um apoio sob os joelhos.</li>
+                        <li>Evite dormir de barriga para baixo — essa posição força a lombar e o pescoço.</li>
+                    </ul>
+                    <h3>Colchão ideal</h3>
+                    <ul>
+                        <li><strong>Tipo:</strong> Molas ensacadas ou espuma de alta densidade (D33 a D45).</li>
+                        <li><strong>Firmeza:</strong> Média. Nem muito duro (causa dor nos ombros) nem muito mole (afunda a coluna).</li>
+                        <li><strong>Diferenciais:</strong> Colchões com zoneamento (mais suporte na região lombar) são excelentes.</li>
+                        <li><strong>Durabilidade:</strong> Invista em um bom colchão, pois vai acompanhar o adolescente por vários anos.</li>
+                    </ul>
+                    <div class="tip-box"><strong>💡 Dica da Lojas Sono:</strong> Adolescentes que praticam esportes precisam de um colchão que alivie a tensão muscular. Molas ensacadas com pillow top são ideais.</div>
+                `
+            },
+            adultos: {
+                titulo: "🧑‍💼 Adultos (20–59 anos)",
+                conteudo: `
+                    <h2>Guia Completo: Adultos</h2>
+                    <p>Nesta fase, o estresse, o trabalho e a rotina exigem um sono reparador. O colchão deve se adaptar ao seu biotipo e às suas necessidades.</p>
+                    <div class="bed-illustration">${svgAdulto}</div>
+                    <h3>O melhor jeito de dormir</h3>
+                    <ul>
+                        <li>De lado: use um travesseiro na altura do ombro e outro entre os joelhos para alinhar o quadril.</li>
+                        <li>De barriga para cima: travesseiro baixo e um apoio sob os joelhos para aliviar a lombar.</li>
+                        <li>Evite dormir de barriga para baixo — é a pior posição para a coluna cervical e lombar.</li>
+                    </ul>
+                    <h3>Colchão ideal</h3>
+                    <ul>
+                        <li><strong>Tipo:</strong> Molas ensacadas (para casais ou pessoas mais pesadas) ou espuma D33 a D45.</li>
+                        <li><strong>Firmeza:</strong> Média a firme. Pessoas com dores lombares devem optar por firmeza média.</li>
+                        <li><strong>Diferenciais:</strong> Espuma viscoelástica (memory foam) ajuda a aliviar pontos de pressão.</li>
+                        <li><strong>Casais:</strong> Prefira colchões com molas ensacadas para evitar que um movimente o outro.</li>
+                    </ul>
+                    <div class="tip-box"><strong>💡 Dica da Lojas Sono:</strong> Se você acorda com dores nas costas, experimente um colchão de firmeza média com camada de viscoelástico. Ele se adapta ao corpo sem afundar demais.</div>
+                `
+            },
+            melhoridade: {
+                titulo: "🧓 Melhor Idade (60+ anos)",
+                conteudo: `
+                    <h2>Guia Completo: Melhor Idade</h2>
+                    <p>Com o passar dos anos, a pele, as articulações e a musculatura ficam mais sensíveis. O colchão precisa unir conforto e suporte.</p>
+                    <div class="bed-illustration">${svgMelhorIdade}</div>
+                    <h3>O melhor jeito de dormir</h3>
+                    <ul>
+                        <li>De lado: use travesseiros que preencham o espaço entre ombro e pescoço e entre os joelhos.</li>
+                        <li>De barriga para cima: travesseiro baixo e apoio sob os joelhos para reduzir a pressão na lombar.</li>
+                        <li>Evite colchões muito altos — facilite a entrada e saída da cama.</li>
+                    </ul>
+                    <h3>Colchão ideal</h3>
+                    <ul>
+                        <li><strong>Tipo:</strong> Espuma viscoelástica (memory foam) ou molas com pillow top.</li>
+                        <li><strong>Firmeza:</strong> Média macia. Muito duro causa dor nos quadris e ombros; muito mole dificulta levantar.</li>
+                        <li><strong>Diferenciais:</strong> Colchões com tecnologia de alívio de pressão e bordas reforçadas.</li>
+                        <li><strong>Altura:</strong> Prefira colchões mais baixos ou camas ajustáveis para facilitar o dia a dia.</li>
+                    </ul>
+                    <div class="tip-box"><strong>💡 Dica da Lojas Sono:</strong> Para quem sente dores nas articulações, o memory foam é excelente porque distribui o peso e reduz pontos de pressão.</div>
+                `
+            },
+            tabelaBebes: {
+                titulo: "👶 Bebês (0–2 anos) - Detalhes",
+                conteudo: `
+                    <h2>Bebês (0–2 anos)</h2>
+                    <p>O sono do bebê é a base de todo o desenvolvimento físico e neurológico. Nesta fase, a segurança é prioridade absoluta.</p>
+                    <div class="bed-illustration">${svgBebe}</div>
+                    <div class="specs-grid">
+                        <div class="spec-item"><div class="spec-label">Tipo</div><div class="spec-value">Espuma Baby</div></div>
+                        <div class="spec-item"><div class="spec-label">Firmeza</div><div class="spec-value">Extra Firme</div></div>
+                        <div class="spec-item"><div class="spec-label">Densidade</div><div class="spec-value">D28–D30</div></div>
+                        <div class="spec-item"><div class="spec-label">Revestimento</div><div class="spec-value">Impermeável</div></div>
+                    </div>
+                    <h3>Por que essas especificações?</h3>
+                    <ul>
+                        <li><strong>Espuma Baby:</strong> Material desenvolvido especificamente para bebês, com densidade controlada e livre de substâncias nocivas.</li>
+                        <li><strong>Extra Firme:</strong> Evita que o bebê afunde e previne o risco de sufocamento (SIDS).</li>
+                        <li><strong>D28–D30:</strong> Densidade ideal para suportar o peso leve do bebê sem deformar.</li>
+                        <li><strong>Impermeável:</strong> Protege contra líquidos e facilita a higiene, evitando fungos e bactérias.</li>
+                    </ul>
+                    <h3>O que evitar</h3>
+                    <ul>
+                        <li>Colchões macios ou com pillow top.</li>
+                        <li>Colchões herdados de outras crianças (podem estar deformados).</li>
+                        <li>Travesseiros e objetos soltos no berço.</li>
+                    </ul>
+                    <div class="tip-box"><strong>💡 Dica da Lojas Sono:</strong> Verifique se o colchão se encaixa perfeitamente no berço, sem frestas maiores que 3 cm. Isso evita que o bebê fique preso.</div>
+                `
+            },
+            tabelaCriancas: {
+                titulo: "🧒 Crianças (3–12 anos) - Detalhes",
+                conteudo: `
+                    <h2>Crianças (3–12 anos)</h2>
+                    <p>Nesta fase, a criança cresce rápido e a coluna está em formação. O colchão precisa acompanhar esse desenvolvimento com firmeza e conforto.</p>
+                    <div class="bed-illustration">${svgCrianca}</div>
+                    <div class="specs-grid">
+                        <div class="spec-item"><div class="spec-label">Tipo</div><div class="spec-value">Espuma ou Molas</div></div>
+                        <div class="spec-item"><div class="spec-label">Firmeza</div><div class="spec-value">Firme</div></div>
+                        <div class="spec-item"><div class="spec-label">Densidade</div><div class="spec-value">D28–D33</div></div>
+                        <div class="spec-item"><div class="spec-label">Extra</div><div class="spec-value">Antialérgico</div></div>
+                    </div>
+                    <h3>Por que essas especificações?</h3>
+                    <ul>
+                        <li><strong>Espuma ou Molas:</strong> A espuma D33 é mais durável; molas são boas para crianças maiores.</li>
+                        <li><strong>Firme:</strong> Mantém a coluna alinhada durante o crescimento.</li>
+                        <li><strong>D28–D33:</strong> Suporta o peso crescente sem afundar.</li>
+                        <li><strong>Antialérgico:</strong> Crianças passam muito tempo na cama, então evitar ácaros é essencial.</li>
+                    </ul>
+                    <h3>O melhor jeito de dormir</h3>
+                    <ul>
+                        <li>De barriga para cima ou de lado, com travesseiro baixo.</li>
+                        <li>Evite dormir de barriga para baixo (prejudica o pescoço).</li>
+                        <li>Incentive uma rotina de sono regular.</li>
+                    </ul>
+                    <div class="tip-box"><strong>💡 Dica da Lojas Sono:</strong> Invista em um colchão de boa qualidade agora, pois ele vai durar até a adolescência. Considere um modelo com proteção antialérgica.</div>
+                `
+            },
+            tabelaAdolescentes: {
+                titulo: "🧑 Adolescentes (13–19 anos) - Detalhes",
+                conteudo: `
+                    <h2>Adolescentes (13–19 anos)</h2>
+                    <p>O corpo passa por um estirão de crescimento e a coluna exige suporte adequado. Esportes, estudos e hormônios afetam o sono.</p>
+                    <div class="bed-illustration">${svgAdolescente}</div>
+                    <div class="specs-grid">
+                        <div class="spec-item"><div class="spec-label">Tipo</div><div class="spec-value">Molas / Espuma</div></div>
+                        <div class="spec-item"><div class="spec-label">Firmeza</div><div class="spec-value">Média</div></div>
+                        <div class="spec-item"><div class="spec-label">Densidade</div><div class="spec-value">D33–D45</div></div>
+                        <div class="spec-item"><div class="spec-label">Extra</div><div class="spec-value">Zoneamento</div></div>
+                    </div>
+                    <h3>Por que essas especificações?</h3>
+                    <ul>
+                        <li><strong>Molas Ensacadas:</strong> Oferecem suporte individualizado e não transferem movimento.</li>
+                        <li><strong>Média:</strong> Equilíbrio entre conforto e suporte para a coluna em crescimento.</li>
+                        <li><strong>D33–D45:</strong> Densidade que suporta o peso do adolescente sem deformar.</li>
+                        <li><strong>Zoneamento:</strong> Mais suporte na lombar e menos nos ombros, alinhando a coluna.</li>
+                    </ul>
+                    <h3>O melhor jeito de dormir</h3>
+                    <ul>
+                        <li>De lado é ideal, com travesseiro na altura do ombro e outro entre os joelhos.</li>
+                        <li>Se dormir de barriga para cima, use travesseiro baixo e apoio sob os joelhos.</li>
+                        <li>Evite a posição de barriga para baixo.</li>
+                    </ul>
+                    <div class="tip-box"><strong>💡 Dica da Lojas Sono:</strong> Adolescentes que fazem esportes precisam de um colchão que alivie a tensão muscular. Molas ensacadas com pillow top são excelentes.</div>
+                `
+            },
+            tabelaAdultos: {
+                titulo: "🧑‍💼 Adultos (20–59 anos) - Detalhes",
+                conteudo: `
+                    <h2>Adultos (20–59 anos)</h2>
+                    <p>O estresse do trabalho, a rotina intensa e o sedentarismo afetam a coluna. Um colchão adequado é essencial para um sono reparador.</p>
+                    <div class="bed-illustration">${svgAdulto}</div>
+                    <div class="specs-grid">
+                        <div class="spec-item"><div class="spec-label">Tipo</div><div class="spec-value">Molas / Espuma</div></div>
+                        <div class="spec-item"><div class="spec-label">Firmeza</div><div class="spec-value">Média a Firme</div></div>
+                        <div class="spec-item"><div class="spec-label">Densidade</div><div class="spec-value">D33–D45</div></div>
+                        <div class="spec-item"><div class="spec-label">Extra</div><div class="spec-value">Memory Foam</div></div>
+                    </div>
+                    <h3>Por que essas especificações?</h3>
+                    <ul>
+                        <li><strong>Molas Ensacadas:</strong> Ideais para casais, evitam transferência de movimento.</li>
+                        <li><strong>Média a Firme:</strong> Alinha a coluna e alivia dores lombares.</li>
+                        <li><strong>D33–D45:</strong> Suporta diferentes biotipos sem afundar.</li>
+                        <li><strong>Memory Foam:</strong> Adapta-se ao corpo, aliviando pontos de pressão.</li>
+                    </ul>
+                    <h3>O melhor jeito de dormir</h3>
+                    <ul>
+                        <li>De lado: travesseiro na altura do ombro e outro entre os joelhos.</li>
+                        <li>De barriga para cima: travesseiro baixo e apoio sob os joelhos.</li>
+                        <li>Evite dormir de barriga para baixo.</li>
+                    </ul>
+                    <div class="tip-box"><strong>💡 Dica da Lojas Sono:</strong> Se você acorda com dores nas costas, experimente um colchão de firmeza média com camada de viscoelástico. Ele se adapta ao corpo sem afundar demais.</div>
+                `
+            },
+            tabelaMelhorIdade: {
+                titulo: "🧓 Melhor Idade (60+ anos) - Detalhes",
+                conteudo: `
+                    <h2>Melhor Idade (60+ anos)</h2>
+                    <p>Com o envelhecimento, a pele, as articulações e a musculatura ficam mais sensíveis. O colchão precisa unir conforto e suporte para facilitar o dia a dia.</p>
+                    <div class="bed-illustration">${svgMelhorIdade}</div>
+                    <div class="specs-grid">
+                        <div class="spec-item"><div class="spec-label">Tipo</div><div class="spec-value">Viscoelástico</div></div>
+                        <div class="spec-item"><div class="spec-label">Firmeza</div><div class="spec-value">Média Macia</div></div>
+                        <div class="spec-item"><div class="spec-label">Tecnologia</div><div class="spec-value">Memory Foam</div></div>
+                        <div class="spec-item"><div class="spec-label">Extra</div><div class="spec-value">Pillow Top</div></div>
+                    </div>
+                    <h3>Por que essas especificações?</h3>
+                    <ul>
+                        <li><strong>Viscoelástico (Memory Foam):</strong> Distribui o peso e reduz pontos de pressão nos quadris e ombros.</li>
+                        <li><strong>Média Macia:</strong> Não é muito duro (causa dor) nem muito mole (dificulta levantar).</li>
+                        <li><strong>Pillow Top:</strong> Camada extra de conforto que protege articulações sensíveis.</li>
+                        <li><strong>Bordas Reforçadas:</strong> Facilitam sentar e levantar da cama com segurança.</li>
+                    </ul>
+                    <h3>O melhor jeito de dormir</h3>
+                    <ul>
+                        <li>De lado: travesseiros que preencham o espaço entre ombro e pescoço e entre os joelhos.</li>
+                        <li>De barriga para cima: travesseiro baixo e apoio sob os joelhos.</li>
+                        <li>Evite colchões muito altos — prefira modelos mais baixos ou camas ajustáveis.</li>
+                    </ul>
+                    <div class="tip-box"><strong>💡 Dica da Lojas Sono:</strong> Para quem sente dores nas articulações, o memory foam é excelente porque distribui o peso e reduz pontos de pressão.</div>
+                `
+            }
+        };
+
+        // ==================== FUNÇÕES MODAL ====================
+        
+        function abrirPagina(chave) {
+            const modal = document.getElementById('pageModal');
+            const modalBody = document.getElementById('modalBody');
+            const pagina = paginas[chave];
+            
+            if (pagina) {
+                modalBody.innerHTML = pagina.conteudo;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function fecharPagina() {
+            const modal = document.getElementById('pageModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        document.getElementById('pageModal').addEventListener('click', function(e) {
+            if (e.target === this) fecharPagina();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') fecharPagina();
+        });
+
+        function scrollToSection(id) {
+            const section = document.getElementById(id);
+            if (section) section.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // ==================== QUIZ ====================
+        
+        const perguntas = [
+            {
+                pergunta: "Quanto tempo, em média, passamos dormindo ao longo da vida?",
+                opcoes: [
+                    "Cerca de 1/4 da vida",
+                    "Cerca de 1/3 da vida",
+                    "Cerca de metade da vida",
+                    "Cerca de 1/5 da vida"
+                ],
+                correta: 1,
+                explicacao: "Passamos cerca de 1/3 da vida dormindo. Por isso, o colchão é um investimento essencial na saúde física e mental."
+            },
+            {
+                pergunta: "O que acontece com a coluna quando o colchão é muito mole?",
+                opcoes: [
+                    "Ela fica alinhada naturalmente",
+                    "Ela afunda e perde o alinhamento natural, forçando músculos e ligamentos",
+                    "Ela fica mais rígida e forte",
+                    "Nada acontece, o colchão não influencia"
+                ],
+                correta: 1,
+                explicacao: "Colchão muito mole faz a coluna 'afundar' e perder o alinhamento natural, agravando dores lombares e cervicais."
+            },
+            {
+                pergunta: "Qual é o colchão recomendado para adolescentes (13–19 anos)?",
+                opcoes: [
+                    "Extra firme, densidade D28",
+                    "Muito mole, tipo pillow top",
+                    "Firmeza média, com molas ensacadas ou espuma D33 a D45",
+                    "Qualquer colchão, pois a idade não influencia"
+                ],
+                correta: 2,
+                explicacao: "Para adolescentes, o ideal é firmeza média com molas ensacadas ou espuma D33 a D45, para acompanhar o crescimento e alinhar a coluna."
+            },
+            {
+                pergunta: "Por que a coluna alinhada é tão importante para atletas?",
+                opcoes: [
+                    "Porque deixa o atleta mais alto",
+                    "Porque transmite força entre pernas e braços, previne lesões e melhora o desempenho",
+                    "Porque só atletas têm coluna",
+                    "Porque aumenta o peso do atleta"
+                ],
+                correta: 1,
+                explicacao: "A coluna é o eixo central do movimento. Alinhada, transmite força, previne lesões e melhora o desempenho esportivo."
+            },
+            {
+                pergunta: "Qual colchão é recomendado para bebês?",
+                opcoes: [
+                    "Macio e com pillow top para aconchego",
+                    "Extra firme, densidade D28 a D30 e impermeável",
+                    "De molas ensacadas com memory foam",
+                    "Qualquer colchão de adulto serve"
+                ],
+                correta: 1,
+                explicacao: "Bebês precisam de colchão extra firme (D28–D30), impermeável e antialérgico, para prevenir deformações e reduzir riscos de sufocamento."
+            },
+            {
+                pergunta: "O que um colchão muito duro pode causar?",
+                opcoes: [
+                    "Melhora instantânea da coluna",
+                    "Pontos de pressão nos ombros, quadris e costelas, causando rigidez",
+                    "Nada, é o melhor tipo de colchão",
+                    "Aumento da circulação sanguínea"
+                ],
+                correta: 1,
+                explicacao: "Colchão muito duro cria pontos de pressão, dificulta a circulação e causa rigidez ao acordar."
+            },
+            {
+                pergunta: "Qual tecnologia é especialmente recomendada para a melhor idade (60+)?",
+                opcoes: [
+                    "Espuma comum D20",
+                    "Viscoelástico (memory foam) com pillow top",
+                    "Colchão de palha",
+                    "Colchão muito firme de molas duras"
+                ],
+                correta: 1,
+                explicacao: "O memory foam distribui o peso e alivia pontos de pressão, sendo ideal para articulações sensíveis da melhor idade."
+            },
+            {
+                pergunta: "Qual é o melhor jeito de dormir para alinhar a coluna?",
+                opcoes: [
+                    "De barriga para baixo, sempre",
+                    "De lado ou de barriga para cima, com travesseiros adequados",
+                    "Sentado na cama",
+                    "De cabeça para baixo"
+                ],
+                correta: 1,
+                explicacao: "De lado (com travesseiro entre os joelhos) ou de barriga para cima (com apoio sob os joelhos) são as posições que alinham melhor a coluna."
+            },
+            {
+                pergunta: "O que o colchão certo faz pela circulação sanguínea?",
+                opcoes: [
+                    "Aumenta a compressão dos vasos",
+                    "Distribui o peso e reduz pontos de pressão, melhorando a circulação",
+                    "Não tem relação com circulação",
+                    "Diminui o fluxo sanguíneo"
+                ],
+                correta: 1,
+                explicacao: "Um colchão adequado distribui bem o peso, reduz pontos de pressão e melhora a circulação, evitando formigamento e inflamação."
+            },
+            {
+                pergunta: "Por que o colchão é considerado um investimento na saúde?",
+                opcoes: [
+                    "Porque dura só 1 ano",
+                    "Porque um bom colchão dura de 8 a 10 anos e protege a coluna, o sono e a saúde a longo prazo",
+                    "Porque é caro e bonito",
+                    "Porque substitui o médico"
+                ],
+                correta: 1,
+                explicacao: "Um bom colchão dura de 8 a 10 anos e protege a coluna, melhora o sono e a saúde como um todo — é um investimento real."
+            }
+        ];
+
+        let perguntaAtual = 0;
+        let pontuacao = 0;
+        let respondeu = false;
+
+        function renderizarPergunta() {
+            const container = document.getElementById('quizContainer');
+            const counter = document.getElementById('quizCounter');
+            const progressBar = document.getElementById('quizProgressBar');
+            const result = document.getElementById('quizResult');
+
+            result.classList.remove('show');
+
+            if (perguntaAtual >= perguntas.length) {
+                mostrarResultado();
+                return;
+            }
+
+            respondeu = false;
+            const p = perguntas[perguntaAtual];
+            counter.textContent = `Pergunta ${perguntaAtual + 1} de ${perguntas.length}`;
+            progressBar.style.width = `${((perguntaAtual) / perguntas.length) * 100}%`;
+
+            const letras = ['A', 'B', 'C', 'D'];
+
+            container.innerHTML = `
+                <div class="quiz-question">
+                    <h3>${p.pergunta}</h3>
+                    <div class="quiz-options" id="quizOptions">
+                        ${p.opcoes.map((op, i) => `
+                            <button class="quiz-option" onclick="responder(${i})" data-index="${i}">
+                                <span class="letter">${letras[i]}</span>
+                                <span>${op}</span>
+                            </button>
+                        `).join('')}
+                    </div>
+                    <div class="quiz-feedback" id="quizFeedback"></div>
+                    <button class="quiz-next-btn" id="quizNextBtn" onclick="proximaPergunta()">
+                        ${perguntaAtual === perguntas.length - 1 ? '🏁 Ver Resultado' : 'Próxima Pergunta →'}
+                    </button>
+                </div>
+            `;
+        }
+
+        function responder(index) {
+            if (respondeu) return;
+            respondeu = true;
+
+            const p = perguntas[perguntaAtual];
+            const options = document.querySelectorAll('.quiz-option');
+            const feedback = document.getElementById('quizFeedback');
+            const nextBtn = document.getElementById('quizNextBtn');
+
+            options.forEach((opt, i) => {
+                opt.disabled = true;
+                if (i === p.correta) opt.classList.add('correct');
+                if (i === index && i !== p.correta) opt.classList.add('wrong');
+            });
+
+            if (index === p.correta) {
+                pontuacao++;
+                feedback.className = 'quiz-feedback correct show';
+                feedback.innerHTML = `<strong>✅ Correto!</strong>${p.explicacao}`;
+            } else {
+                feedback.className = 'quiz-feedback wrong show';
+                feedback.innerHTML = `<strong>❌ Não foi essa.</strong>${p.explicacao}`;
+            }
+
+            nextBtn.classList.add('show');
+        }
+
+        function proximaPergunta() {
+            perguntaAtual++;
+            renderizarPergunta();
+        }
+
+        function mostrarResultado() {
+            const container = document.getElementById('quizContainer');
+            const result = document.getElementById('quizResult');
+            const progressBar = document.getElementById('quizProgressBar');
+            const counter = document.getElementById('quizCounter');
+
+            container.innerHTML = '';
+            counter.textContent = 'Quiz concluído!';
+            progressBar.style.width = '100%';
+
+            const scoreNumber = document.getElementById('scoreNumber');
+            const resultTitle = document.getElementById('resultTitle');
+            const resultMessage = document.getElementById('resultMessage');
+            const resultEmoji = document.getElementById('resultEmoji');
+            const scoreCircle = document.getElementById('scoreCircle');
+
+            scoreNumber.textContent = pontuacao;
+            const percent = (pontuacao / perguntas.length) * 100;
+            scoreCircle.style.setProperty('--score-deg', `${(percent / 100) * 360}deg`);
+
+            let titulo, mensagem, emoji;
+            if (pontuacao === 10) {
+                titulo = "Perfeito! Você é um especialista em sono!";
+                mensagem = "Parabéns! Você acertou tudo e entendeu perfeitamente a importância do colchão para a saúde, a coluna e o desempenho esportivo.";
+                emoji = "🏆";
+            } else if (pontuacao >= 8) {
+                titulo = "Excelente! Você aprendeu muito!";
+                mensagem = "Você domina o assunto! Só faltou um detalhe ou outro, mas seu conhecimento sobre colchões e saúde é impressionante.";
+                emoji = "🌟";
+            } else if (pontuacao >= 6) {
+                titulo = "Muito bom! Você está no caminho certo!";
+                mensagem = "Você absorveu boa parte do conteúdo. Releia algumas seções do site para fixar ainda mais o conhecimento.";
+                emoji = "👍";
+            } else if (pontuacao >= 4) {
+                titulo = "Bom começo! Vale revisar o conteúdo.";
+                mensagem = "Você já sabe algumas coisas, mas ainda há bastante para aprender. Volte ao site e leia com atenção as seções sobre a coluna e faixas etárias.";
+                emoji = "📚";
+            } else {
+                titulo = "Hora de revisar o conteúdo!";
+                mensagem = "Não se preocupe! Aproveite para reler o site com calma. O conhecimento sobre colchões pode transformar sua saúde e seu sono.";
+                emoji = "💡";
+            }
+
+            resultTitle.textContent = titulo;
+            resultMessage.textContent = mensagem;
+            resultEmoji.textContent = emoji;
+
+            result.classList.add('show');
+        }
+
+        function reiniciarQuiz() {
+            perguntaAtual = 0;
+            pontuacao = 0;
+            respondeu = false;
+            document.getElementById('scoreCircle').style.setProperty('--score-deg', '0deg');
+            renderizarPergunta();
+            scrollToSection('quiz');
+        }
+
+        // Inicializa o quiz
+        renderizarPergunta();
+    </script>
+
+</body>
+</html>
